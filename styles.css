@@ -1,168 +1,179 @@
-/* Outer box with light pink background */
-.outer-box {
-    background-color: lightpink;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    box-sizing: border-box;
-}
-
-/* Inner box containing all elements */
-.inner-box {
-    width: 80%;
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 15px; 
-    overflow: hidden; 
-}
-
-/* Upper 2/3 section with white background */
-.upper-section {
-    background-color: white;
-    flex: 2;
-    padding: 20px;
-    box-sizing: border-box;
-    position: relative;
-    display: flex; 
-    align-items: center; /* Center content vertically */
-}
-
-/* Styling for header */
-header h1 {
-    font-weight: bold; 
-    position: absolute;
-    top: 20px; 
-    left: 40px;
+body {
     margin: 0;
-}
-
-/* Styling for navigation */
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-/* Styling for the "Try Now" link */
-nav ul li a.try-now {
-    color: blue; 
-    font-weight: bold;
-}
-
-nav ul li {
-    margin: 0 10px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: black;
-}
-
-/* Styling for the main section */
-main {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px; /* Space between text and image */
-    padding: 20px;
-    margin-top: 100px;
-}
-
-/* Styling for the h2 */
-main h2 {
-    font-size: 2.5rem; 
-    font-weight: bold;
-    margin: 20px 0 0;
-}
-
-/* Styling for the paragraph */
-main p {
-    font-size: 1rem; 
-    font-weight: normal; 
-    margin: 20px 0; 
-}
-
-/* Flex container for button and link */
-.button-link-container {
-    display: flex; 
-    align-items: center;
-    gap: 20px; 
-    margin-top: 20px;
-}
-
-/* Styling for the "Get Tips" button */
-main button {
-    background-color: navy; 
-    color: white; 
-    border: none; 
-    padding: 10px 20px; 
-    border-radius: 10px; 
-    font-size: 1rem; 
-    cursor: pointer; 
-}
-
-/* Styling for the "Learn More" link */
-main a {
-    display: inline-flex; 
-    align-items: center; 
-    text-decoration: none; 
-    color: black; 
-    font-size: 1rem; 
-}
-
-/* Styling for the image inside the link */
-a img {
-    width: 50px; 
-    height: 50px; 
-    margin-right: 5px; 
-    vertical-align: middle; 
-    border-radius: 50%;
-}
-
-.lower-section {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-top: 0px;
-    background-color: #e6f4ff; 
-    padding: 30px 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #fce4ec, #ffffff);
+    color: #333;
   }
   
-.card {
-flex: 1;
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  header {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.cell-content {
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    border-bottom: none;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  nav a.cta-button {
+    color: #4a00e0;
+    font-weight: 600;
+  }
+  
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    margin: 3rem;
+  }
+  
+  .hero-content {
+    max-width: 50%;
+  }
+  
+  .hero-content h2 {
+    font-size: 2.5rem;
+    line-height: 1.3;
+    font-weight: 700;
+    position: relative;
+  }
+  
+  .hero-content h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0.3rem;
+    left: 0;
+    width: 160px;
+    height: 0.6rem;
+    background-size: contain;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+    color: #555;
+   
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .btn-primary {
+    background-color: #4339f2;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .learn-more-wrapper {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-weight: bold;
-}
-
-.cell-content img {
-    width: 24px;
-    height: 24px;
-    border-radius: 5px;
-}
-
-.card p {
-    margin: 0;
-    text-align: justify;
-    font-size: 14px;
-    color: #333;
-}
+  }
+  
+  .btn-secondary {
+    background-color: transparent;
+    border: none;
+    font-weight: 500;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .btn-secondary::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: #fcd34d;
+    font-size: 0.9rem;
+    border: none;
+  }
+  
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 3rem;
+    gap: 2rem;
+    background-color: #E0F7FA; /* Cyan background */
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+  
+  .feature-card {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .feature-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .feature-card i.briefcase::before {
+    content: '\1F4BC';
+  }
+  
+  .feature-card i.location::before {
+    content: '\1F4CD';
+  }
+  
+  .feature-card i.person::before {
+    content: '\1F464';
+  }
+  
+  .highlight-sm {
+    border-bottom: 2px solid currentColor;
+    padding-bottom: 2px;
+  }
+  
+  .brown {
+    color: #9C6644;
+  }
+  
+  .cyan {
+    color: #00A9A5;
+  }
+  
+  .pink {
+    color: #DB2777;
+  }
+  
   
