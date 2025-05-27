@@ -1,45 +1,69 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Happy Home</title>
-</head>
-
-<body>
-    <header>
-        <h1>Happy Home</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Blogs</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Try Now</a></li>
-        </ul>
+<header role="banner">
+    <link rel="stylesheet" href="styles.css">
+    <h1>Happy Home</h1>
+    <nav role="navigation" aria-label="Main Navigation">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Blogs</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#" class="cta-button">Try now</a></li>
+      </ul>
     </nav>
-    <main>
+  </header>
+  
+  <main>
+    <section class="hero">
+      <div class="hero-content">
         <h2>Learn the best ways for staying productive</h2>
-        <p>Working at home is definitely a convenient option and makes sense in these unprecedented times.</p>
-        <img src="C:\Afifi\KX frontend\Placeholder_img.png" alt="Woman sitting at home next to a window smelling a flower and seems happy, next to her is a table with a vase and two candles">
-        <button>Get Tips</button>
-        <a href="#">Learn More</a>
-
-        <table>
-            <tr>
-                <td>Work-Life Balance</td>
-                <td>Many remote jobs also come with flexible schedules, which means that workers can start and end their day as they choose.</td>
-            </tr>
-            <tr>
-                <td>Work Anywhere</td>
-                <td>Having access to a broader range of job opportunities that aren't limited by geographic location. This can be especially helpful.</td>
-            </tr>
-            <tr>
-                <td>Improved Inclusivity</td>
-                <td>Remote work enables companies to embrace diversity and inclusion by hiring people from different backgrounds.</td>
-            </tr>
-        </table>
-    </main>
-</body>
-
-</html>
+        <p>
+          Working at home is definitely a convenient option and makes sense in
+          these unprecedented times.
+        </p>
+        <div class="hero-buttons">
+            <button aria-label="Get tips" class="btn-primary">Get Tips</button>
+            <div class="learn-more-wrapper">
+              <img src="play.png" alt="Play Icon" width="24" height="24" />
+              <button aria-label="Learn more" class="btn-secondary">Learn More</button>
+            </div>
+          </div>
+      </div>
+      <figure class="hero-image">
+        <img src="https://i.ibb.co/8nB6fMJ2/Image-1.png" alt="Person working from home" />
+      </figure>
+    </section>
+  
+    <section class="features" aria-labelledby="features-heading">
+      <article class="feature-card">
+        <h3>
+          <img src="suitcase.png" alt="Briefcase Icon" width="24" height="24" />
+          <span class="highlight-sm brown">Work-Life Balance</span>
+        </h3>
+        <p>
+          Many remote jobs also come with flexible schedules, which means that
+          workers can start and end their day as they choose.
+        </p>
+      </article>
+      <article class="feature-card">
+        <h3>
+          <img src="location.png" alt="Location Icon" width="24" height="24" />
+          <span class="highlight-sm cyan">Work Anywhere</span>
+        </h3>
+        <p>
+          Having access to a broader range of job opportunities that aren't
+          limited by geographic location. This can be especially helpful.
+        </p>
+      </article>
+      <article class="feature-card">
+        <h3>
+          <img src="persons.png" alt="Person Icon" width="24" height="24" />
+          <span class="highlight-sm pink">Improved Inclusivity</span>
+        </h3>
+        <p>
+          Remote work enables companies to embrace diversity and inclusion by
+          hiring people from different backgrounds.
+        </p>
+      </article>
+    </section>
+  </main>
+  
