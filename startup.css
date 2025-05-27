@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif; 
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: #f7f7f7; 
+    padding: 0;
+    overflow: hidden;
+}
+
+.figma-sidebar {
+    width: 240px; 
+    background-color: #FFFFFF; 
+    height: 100vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05); 
+    padding-top: 16px;
+    color: #333; 
+    font-size: 14px;
+    line-height: 1.5;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: #222; 
+}
+
+.sidebar-header .project-name {
+    flex-grow: 1;
+    font-weight: 600;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sidebar-section {
+    margin-bottom: 20px;
+}
+
+.sidebar-section .section-title {
+    font-size: 12px; 
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    padding: 4px 16px;
+    margin-top: 0;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.sidebar-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-section li {
+    padding: 8px 16px 8px 24px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sidebar-section li:hover {
+    background-color: #F0F0F0; 
+}
+
+.sidebar-section li.selected,
+.sidebar-section li.selected-layer {
+    background-color: #E6E6E6; 
+    font-weight: 600; 
+    color: #222; 
+}
+
+.sidebar-section li.selected-layer {
+    padding-left: 32px; 
+    font-size: 13px;
+    color: #555;
+}
