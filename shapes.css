@@ -1,0 +1,165 @@
+/* Body tag shapes */
+body::before,
+body::after {
+  position: absolute;
+  z-index: 1;
+}
+
+/* Triangle shape on the top right side */
+body::before {
+  background-image: url(./assets/triangle.svg);
+  right: 2rem;
+  top: -6rem;
+}
+
+/* Horseshoe shape on the bottom left side */
+body::after {
+  background-image: url(./assets/circle.svg);
+  bottom: -6rem;
+  left: 6.5%;
+}
+
+/* Gradient blur layer on the top right corner */
+html::after {
+  content: "";
+  background-image: url(./assets/blur.svg);
+  background-size: cover;
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 0;
+  right: 0;
+}
+
+/* Gradient background */
+html::before {
+  background: linear-gradient(to bottom, #FED0FC, #FADBEC);
+  opacity: 0.3;
+  width: 100%;
+  height: 100%;
+}
+
+body::before,
+body::after {
+  content: "";
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 10rem;
+  height: 10rem;
+}
+
+/* Container gradient border */
+.container::before {
+  right: 0;
+  bottom: 0;
+  margin: -4px;
+  border-radius: inherit;
+  background: linear-gradient(to bottom, #FFD6E7, #FADBEC);
+}
+
+.container::after,
+html::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Hero shapes */
+#best {
+  position: relative;
+}
+
+#best::after {
+  content: " ";
+  position: absolute;
+  top: -1.5rem;
+  right: -2.5rem;
+  background-image: url(https://i.ibb.co/HLw8CTxM/Vector.png);
+  width: 4rem;
+  height: 3rem;
+  background-size: contain;
+}
+
+.highlight,
+.highlight-sm {
+  position: relative;
+  z-index: 1;
+}
+
+.highlight-sm::after {
+  width: 2.25rem;
+  height: 4px;
+  right: -0.625rem;
+  bottom: 1px;
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.highlight::after,
+.highlight-sm::after,
+i::before {
+  content: "";
+  position: absolute;
+}
+
+.highlight::after {
+  content: "";
+  background-image: url(./assets/line.svg);
+  background-size: cover;
+  width: 80%;
+  height: 0.75rem;
+  right: -4rem;
+  bottom: 0.8rem;
+  z-index: -1;
+}
+
+/* Features section icons and underlines */
+.feature-card {
+  i {
+    margin-right: 0.75rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    background-size: contain;
+  }
+
+  i::before {
+    display: inline-block;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    right: -3px;
+    top: 0;
+    opacity: 0.7;
+  }
+
+  .briefcase i {
+    background-image: url(./assets/briefcase.svg);
+  }
+
+
+  .location i {
+    background-image: url(./assets/location.svg);
+  }
+
+  .person i {
+    background-image: url(./assets/user.svg);
+  }
+
+  .briefcase::after,
+  .briefcase i::before {
+    background-color: #A15842;
+  }
+
+  .location::after,
+  .location i::before {
+    background-color: #3EC1F3;
+  }
+
+  .person::after,
+  .person i::before {
+    background-color: #FFB7D5;
+  }
+}

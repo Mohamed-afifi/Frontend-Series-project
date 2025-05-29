@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="startup.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Workspace</title>
-    <link rel="stylesheet" href="startup.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Landing Page Responsive Showcase</title>
 </head>
 <body>
-    <div class="figma-sidebar" id="figmaSidebar">
-        <div class="sidebar-header">
-            <span class="icon-dots"></span> <span class="icon-puzzle"></span> <span class="project-name">Travellian - Travel Agency ...</span>
-            <span class="icon-arrow-down"></span> <span class="icon-square-grid"></span> </div>
 
-        <div class="sidebar-section pages">
-            <ul>
-                <li class="selected">Design Style Guide</li>
-                <li>Landing Page</li>
-                <li>Breakpoint</li>
-                <li>Logo</li>
-            </ul>
-        </div>
-
-        <div class="sidebar-section layers">
-            <h3 class="section-title">Layers</h3>
-            <ul>
-                <li class="selected-layer"># Design Style Guide</li>
-            </ul>
+    <div class="device-preview desktop-1920">
+        <h2>Desktop / 1920px</h2>
+        <div class="iframe-container" style="width: 1920px; height: 1080px;">
+            <iframe src="Task 1.html" scrolling="no" title="Desktop 1920px Preview"></iframe>
         </div>
     </div>
 
-    <script>
-        document.getElementById('figmaSidebar').addEventListener('click', function() {
-            window.location.href = 'Task 1.html'; 
-        });
-    </script>
+    <div class="device-preview desktop-1440">
+        <h2>Desktop / 1440px</h2>
+        <div class="iframe-container" style="width: 1440px; height: 900px;">
+            <iframe src="Task 1.html" scrolling="no" title="Desktop 1440px Preview"></iframe>
+        </div>
+    </div>
+
+    <div class="device-preview desktop-1152">
+        <h2>Desktop / 1152px</h2>
+        <div class="iframe-container" style="width: 1152px; height: 768px;">
+            <iframe src="Task 1.html" scrolling="no" title="Desktop 1152px Preview"></iframe>
+        </div>
+    </div>
+
+    <div class="device-preview tablet-768">
+        <h2>Tablet / 768px</h2>
+        <div class="iframe-container" style="width: 768px; height: 1024px;">
+            <iframe src="Task 1.html" scrolling="no" title="Tablet 768px Preview"></iframe>
+        </div>
+    </div>
+
+    <div class="device-preview mobile-320">
+        <h2>Mobile / 320px</h2>
+        <div class="iframe-container" style="width: 320px; height: 568px;">
+            <iframe src="Task 1.html" scrolling="no" title="Mobile 320px Preview"></iframe>
+        </div>
+    </div>
+
 </body>
 </html>

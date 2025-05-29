@@ -1,91 +1,161 @@
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif; 
+    font-family: 'Poppins', sans-serif;
+    margin: 20px;
+    background-color: #f0f2f5;
     display: flex;
-    justify-content: flex-start; 
-    align-items: flex-start;
-    min-height: 100vh;
-    background-color: #f7f7f7; 
-    padding: 0;
-    overflow: hidden;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    justify-content: center;
+    gap: 40px; /* Space between each preview card */
+    padding: 20px;
 }
-
-.figma-sidebar {
-    width: 240px; 
-    background-color: #FFFFFF; 
-    height: 100vh;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05); 
-    padding-top: 16px;
-    color: #333; 
-    font-size: 14px;
-    line-height: 1.5;
-    cursor: pointer;
-    box-sizing: border-box;
+.device-preview {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    overflow: hidden; /* Ensures iframe content doesn't break out */
+    flex-shrink: 0; /* Prevent shrinking in flex container */
+    /* Add a min-width to prevent cards from becoming too small and breaking layout */
+    min-width: 360px; /* Adjust as needed, slightly larger than mobile-320 */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
-
-.sidebar-header {
+.device-preview h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+.iframe-container {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden; /* Important to hide scrollbars within the iframe container */
+    position: relative;
+    background-color: #fff; /* Background for the iframe's outer container */
+    /* Ensure no extra space inside the iframe container */
     display: flex;
-    align-items: center;
-    padding: 8px 16px;
-    margin-bottom: 20px;
-    font-weight: 500;
-    color: #222; 
-}
-
-.sidebar-header .project-name {
-    flex-grow: 1;
-    font-weight: 600;
-    font-size: 15px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.sidebar-section {
-    margin-bottom: 20px;
-}
-
-.sidebar-section .section-title {
-    font-size: 12px; 
-    font-weight: 600;
-    color: #888;
-    text-transform: uppercase;
-    padding: 4px 16px;
-    margin-top: 0;
-    margin-bottom: 8px;
-    display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
-
-
-.sidebar-section ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.iframe-container iframe {
+    border: none;
+    display: block;
+    /* width and height will be set by specific classes below */
+    transform-origin: top left;
 }
 
-.sidebar-section li {
-    padding: 8px 16px 8px 24px;
-    cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+/* Specific styles for each breakpoint iframe */
+/* We will apply scales to the .device-preview itself to maintain proportion */
+.desktop-1920 {
+    width: 1920px;
+    height: 1080px; /* Set a default height for the card */
+    transform: scale(0.35); /* Adjust scale for viewing on typical monitors */
+    transform-origin: top left;
+}
+.desktop-1920 .iframe-container, .desktop-1920 iframe {
+    width: 1920px;
+    height: 1080px;
 }
 
-.sidebar-section li:hover {
-    background-color: #F0F0F0; 
+.desktop-1440 {
+    width: 1440px;
+    height: 900px;
+    transform: scale(0.45); /* Adjust scale */
+    transform-origin: top left;
+}
+.desktop-1440 .iframe-container, .desktop-1440 iframe {
+    width: 1440px;
+    height: 900px;
 }
 
-.sidebar-section li.selected,
-.sidebar-section li.selected-layer {
-    background-color: #E6E6E6; 
-    font-weight: 600; 
-    color: #222; 
+.desktop-1152 {
+    width: 1152px;
+    height: 768px;
+    transform: scale(0.55); /* Adjust scale */
+    transform-origin: top left;
+}
+.desktop-1152 .iframe-container, .desktop-1152 iframe {
+    width: 1152px;
+    height: 768px;
 }
 
-.sidebar-section li.selected-layer {
-    padding-left: 32px; 
-    font-size: 13px;
-    color: #555;
+.tablet-768 {
+    width: 768px;
+    height: 1024px;
+    /* No scaling needed typically as it's a common portrait tablet size */
+}
+.tablet-768 .iframe-container, .tablet-768 iframe {
+    width: 768px;
+    height: 1024px;
+}
+
+.mobile-320 {
+    width: 320px;
+    height: 568px;
+}
+.mobile-320 .iframe-container, .mobile-320 iframe {
+    width: 320px;
+    height: 568px;
+}
+
+
+/* Media queries for the showcase page itself, to arrange the cards */
+
+/* For screens where two smaller previews can fit side-by-side */
+@media (min-width: 1200px) { /* Adjust this breakpoint if you want more items side-by-side sooner */
+    /* You might need to adjust flex-basis or widths if you want a perfect grid.
+       For "next to each other" simply remove the stacking effect. */
+    .device-preview {
+        /* Reset any width/transform overrides that might come from smaller media queries */
+        width: auto;
+        transform: none; /* Let individual scales apply for each desktop size */
+    }
+}
+
+/* On medium screens, let's keep things flexible but maybe stack larger ones */
+@media (max-width: 1199px) {
+    .desktop-1920, .desktop-1440, .desktop-1152 {
+        transform: scale(0.3) !important; /* Scale down more aggressively for smaller viewports */
+        transform-origin: top left;
+    }
+    .tablet-768, .mobile-320 {
+        transform: none !important; /* Ensure these are not scaled down further */
+    }
+}
+
+/* For screens where items will start to stack */
+@media (max-width: 900px) { /* This breakpoint will cause stacking if the combined width exceeds it */
+    .device-preview {
+        width: calc(50% - 20px); /* Two columns, accounting for gap */
+        max-width: 450px; /* Prevent them from getting too wide in two columns */
+        transform: none !important; /* Remove any scaling */
+        transform-origin: center center !important; /* Reset origin */
+    }
+    .iframe-container {
+        width: 100% !important;
+        height: 600px !important; /* Adjust height for easier viewing */
+    }
+    .iframe-container iframe {
+        width: 100% !important;
+        height: 100% !important;
+        /* The iframe's internal content will now scale to fit its container due to its own media queries */
+    }
+}
+
+
+/* On very small screens, stack all items */
+@media (max-width: 500px) {
+    body {
+        gap: 20px;
+        padding: 10px;
+    }
+    .device-preview {
+        width: 100%; /* Full width on small screens */
+        padding: 15px;
+        transform: none !important; /* No scaling */
+    }
+    .iframe-container {
+        width: 100% !important;
+        height: 400px !important; /* Smaller height for mobile views */
+    }
 }

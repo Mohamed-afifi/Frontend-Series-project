@@ -1,0 +1,16 @@
+html {
+  font-size: 13px;
+  position: relative;
+}
+
+body {
+  line-height: 1.625rem;
+  position: relative;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", Tahoma, Geneva, Verdana, sans-serif;
+}
