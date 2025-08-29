@@ -1,45 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Home - Work From Home Productivity</title>
+    <link
+      rel="preload"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="./reset.css"
+    />
+    <link
+      rel="preload"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="./style.css"
+    />
+    <link
+      rel="preload"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="./shapes.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Macondo+Swash+Caps&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-    <title>Happy Home</title>
-</head>
-
-<body>
-    <header>
-        <h1>Happy Home</h1>
-    </header>
-    <nav>
-        <ul>
+  <body>
+    <div class="container">
+      <header role="banner">
+        <h1 role="heading" aria-level="1">Happy Home</h1>
+        <nav role="navigation" aria-label="Main Navigation">
+          <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="#">About us</a></li>
             <li><a href="#">Blogs</a></li>
             <li><a href="#">Contact</a></li>
-            <li><a href="#">Try Now</a></li>
-        </ul>
-    </nav>
-    <main>
-        <h2>Learn the best ways for staying productive</h2>
-        <p>Working at home is definitely a convenient option and makes sense in these unprecedented times.</p>
-        <img src="C:\Afifi\KX frontend\Placeholder_img.png" alt="Woman sitting at home next to a window smelling a flower and seems happy, next to her is a table with a vase and two candles">
-        <button>Get Tips</button>
-        <a href="#">Learn More</a>
+            <li><a href="#" class="cta-button">Try now</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section class="hero">
+          <section class="hero-content">
+            <h2>
+              Learn the <span id="best">best</span> ways for staying
+              <span class="highlight">productive</span>
+            </h2>
+            <p>
+              Working at home is definitely a convenient option and makes sense
+              in these unprecedented times.
+            </p>
+            <div class="hero-buttons">
+              <button class="btn-primary">Get Tips</button>
+              <button class="btn-secondary">Learn More</button>
+            </div>
+          </section>
+          <figure class="hero-image">
+            <img src="./assets/hero.svg" alt="Person working from home" />
+          </figure>
+        </section>
 
-        <table>
-            <tr>
-                <td>Work-Life Balance</td>
-                <td>Many remote jobs also come with flexible schedules, which means that workers can start and end their day as they choose.</td>
-            </tr>
-            <tr>
-                <td>Work Anywhere</td>
-                <td>Having access to a broader range of job opportunities that aren't limited by geographic location. This can be especially helpful.</td>
-            </tr>
-            <tr>
-                <td>Improved Inclusivity</td>
-                <td>Remote work enables companies to embrace diversity and inclusion by hiring people from different backgrounds.</td>
-            </tr>
-        </table>
-    </main>
-</body>
-
+        <section class="features" aria-labelledby="features-heading">
+          <article class="feature-card">
+            <h3 class="briefcase highlight-sm brown">
+              <i></i>
+              Work-Life Balance
+            </h3>
+            <p>
+              Many remote jobs also come with flexible schedules, which means
+              that workers can start and end their day as they choose.
+            </p>
+          </article>
+          <article class="feature-card">
+            <h3 class="location highlight-sm cyan">
+              <i></i>
+              Work Anywhere
+            </h3>
+            <p>
+              Having access to a broader range of job opportunities that aren't
+              limited by geographic location. This can be especially helpful.
+            </p>
+          </article>
+          <article class="feature-card">
+            <h3 class="person highlight-sm pink">
+              <i></i>
+              Improved Inclusivity
+            </h3>
+            <p>
+              Remote work enables companies to embrace diversity and inclusion
+              by hiring people from different backgrounds.
+            </p>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>

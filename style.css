@@ -1,0 +1,261 @@
+.container {
+  max-width: 90%;
+  margin: 6.75rem auto;
+  position: relative;
+  box-sizing: border-box;
+  border: 4px solid transparent;
+  border-radius: 1.25rem;
+  background: #fff;
+  background-clip: padding-box;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
+  color: #333333;
+
+  header,
+  .hero,
+  .features {
+    padding: 3.125rem 4rem;
+  }
+
+  /* Header styles */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #000;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      gap: 3rem;
+
+      li a {
+        text-decoration: none;
+        color: #333333;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      li:last-of-type a {
+        color: #4856DF;
+        text-decoration: none;
+        font-weight: 600;
+      }
+    }
+  }
+
+  /* Hero section */
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 0;
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 45%;
+
+      p {
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 1.875rem;
+        max-width: 33.125rem;
+        margin-bottom: 5.5rem;
+        margin-top: 1rem;
+        max-width: 20rem;
+      }
+
+      h2 {
+        font-size: 4.125rem;
+        color: #333;
+        margin-bottom: 1.25rem;
+        line-height: 1.2;
+      }
+    }
+
+    .hero-image {
+      text-align: center;
+      flex-basis: 55%;
+      align-self: end;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+      img {
+        width: 100%;
+        object-fit: scale-down;
+      }
+    }
+
+    .hero-buttons {
+      margin-top: auto;
+      margin-bottom: 3rem;
+
+      button {
+        display: inline-block;
+        min-width: 10rem;
+        height: 3.8rem;
+        cursor: pointer;
+        text-decoration: none;
+        border: none;
+        transition: all 0.3s;
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+      }
+
+
+      .btn-primary {
+        background-color: #5855e8;
+        color: white;
+        border-radius: 8px;
+        margin-right: 1.5rem;
+        font-weight: 600;
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        color: #333;
+        position: relative;
+        border: none;
+        padding-left: 4rem;
+        font-weight: 300;
+      }
+
+      .btn-secondary::before {
+        background-image: url(./assets/play-icon.svg);
+        content: "";
+        width: 3.25rem;
+        height: 100%;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #4240b3;
+      }
+    }
+  }
+
+  .features {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.25rem;
+    background-color: #F6FAFD;
+    border-bottom-left-radius: 1.25rem;
+    border-bottom-right-radius: 1.25rem;
+
+    .feature-card {
+      border: 1px solid #dfdfdf;
+      background-color: #fff;
+      border-radius: 0.625rem;
+      padding: 1.25rem;
+      transition: all 0.3s;
+      z-index: 2;
+
+      p {
+        font-size: 0.875rem;
+        color: #585858;
+      }
+
+      h3 {
+        font-weight: 600;
+        margin-bottom: 0.625rem;
+        color: #333333;
+        font-size: 22px;
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+      }
+    }
+
+    .feature-card:hover,
+    .feature-card:focus-within {
+      transform: translateY(-5px);
+      box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.05);
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  html {
+    font-size: 16px;
+  }
+
+  .container {
+
+    header,
+    .hero,
+    .features {
+      padding: 2.5rem 10rem;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  body {
+
+    .container {
+      .hero {
+
+        .hero-content,
+        .hero-image {
+          flex-grow: 1;
+        }
+
+        .hero-image {
+          margin-bottom: 5rem;
+
+          img {
+            max-width: 60%;
+          }
+        }
+
+        .hero-content {
+          text-align: center;
+          order: 1;
+
+          p {
+            max-width: 100%;
+          }
+        }
+      }
+
+      .features {
+        flex-wrap: wrap;
+
+        .feature-card {
+          flex-grow: 1;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    .container {
+      header {
+        nav {
+          content: url(./assets/menu.svg);
+          width: 2rem;
+
+          ul {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+}
